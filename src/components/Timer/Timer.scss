@@ -1,0 +1,14 @@
+.Timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+
+  .timer-div {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: gray;
+  }
+}

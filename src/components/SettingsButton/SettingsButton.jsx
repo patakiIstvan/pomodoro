@@ -1,8 +1,8 @@
 import React from 'react'
 
-function SettingsButton() {
+function SettingsButton({ toggleSettings }) {
   return (
-    <div className="settingsButton">SettingsButton</div>
+    <div className="settingsButton" onClick={toggleSettings}>Menü</div>
   )
 }
 
