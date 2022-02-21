@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function SettingsSlidebar({ vis, promodoTime, breakTime }) {
   return (
     <div className={`settingsSlidebar ${vis ? 'settings-shown' : 'settings-not-shown'}`} >
@@ -7,11 +8,11 @@ function SettingsSlidebar({ vis, promodoTime, breakTime }) {
       <form>
         <div className="settingsItem">
           <label htmlFor='promodo'>promodo</label>
-          <input type="number" min="1" max="360" value={promodoTime} name="promodo" id="promodo" />
+          <input type="number" min="1" max="360" value="24" name="promodo" id="promodo" />
         </div>
         <div className="settingsItem">
           <label htmlFor='promodo-break'>break</label>
-          <input type="number" min="1" max="30" value={breakTime} name="promodoBreak" id="promodo-break" />
+          <input type="number" min="1" max="30" value="5" name="promodoBreak" id="promodo-break" />
         </div>
       </form>
     </div>
