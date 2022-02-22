@@ -5,12 +5,8 @@
   flex-direction: column;
   height: 100vh;
 
-  .timer-div {
+  .timer__container {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
-    background-color: gray;
-    // border: 5px solid var(--timerColor);
-    border: 5px solid var(--timerColor);
   }
 }

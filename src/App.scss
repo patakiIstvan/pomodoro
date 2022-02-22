@@ -3,3 +3,8 @@
 @import './components/SettingsButton/SettingsButton';
 @import './components/SettingsSlidebar/SettingsSlidebar';
 @import './components/Timer/Timer';
+
+.App {
+  background-color: var(--themeColor);
+  transition: background-color 0.3s ease-in-out;
+}

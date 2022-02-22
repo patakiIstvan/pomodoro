@@ -15,10 +15,10 @@
     margin-bottom: 1rem;
   }
 
-  input {
-    height: 24px;
-    width: 250px;
-  }
+  // input {
+  //   height: 24px;
+  //   width: 250px;
+  // }
 
   // NUMBER INPUT
   /* Chrome, Safari, Edge, Opera */
@@ -85,7 +85,13 @@
     background-color: yellow;
   }
 
-  input[type=submit] {}
+  input[type=submit] {
+    cursor: pointer;
+    width: 100%;
+    padding: 1rem 1rem;
+    border-radius: 6px;
+    border: none;
+  }
 
 
 

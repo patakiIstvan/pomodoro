@@ -8,25 +8,36 @@ function SettingsSlidebar({
   setPromodoTime,
   breakTime,
   setBreakTime,
-  timerColor,
-  setTimerColor,
+  themeColor,
+  setThemeColor,
   fontStyle,
   setFontStyle
 }) {
 
+  const fonts = {
+    f1: `'Gloria Hallelujah', cursive`,
+    f2: `'Inconsolata', monospace`,
+    f3: `'Kaushan Script', cursive`,
+    f4: `'Pacifico', cursive`,
+    f5: `'Quattrocento Sans', sans-serif`,
+    f6: `'Special Elite', cursive`
+  }
+
   const colors = {
-    red: '#FF0000',
-    blue: '#0000FF',
-    purple: '#02FF00'
+    c1: '#F23E30',
+    c2: '#4B8689',
+    c3: '#4F52AF'
   }
 
   const saveSettings = e => {
     e.preventDefault();
     setPromodoTime(e.target.promodo.value)
     setBreakTime(e.target.promodoBreak.value)
-    setTimerColor(e.target.color.value)
+    setThemeColor(e.target.color.value)
     setFontStyle(e.target.style.value)
-    document.documentElement.style.setProperty("--timerColor", colors[e.target.color.value]);
+    console.log(themeColor)
+    document.documentElement.style.setProperty("--themeColor", colors[e.target.color.value]);
+    document.documentElement.style.setProperty("--fontStyle", fonts[e.target.style.value]);
   }
 
   return (
@@ -43,23 +54,23 @@ function SettingsSlidebar({
         </div>
         <div className="settings__item settings__color">
           <h3>Colors</h3>
-          <input type="radio" id="color1" name="color" value="red" defaultChecked={timerColor === 'red'} />
+          <input type="radio" id="color1" name="color" value="c1" defaultChecked={themeColor === 'c1'} />
           <label htmlFor="color1" className="clr1"></label>
 
-          <input type="radio" id="color2" name="color" value="blue" defaultChecked={timerColor === 'blue'} />
+          <input type="radio" id="color2" name="color" value="c2" defaultChecked={themeColor === 'c2'} />
           <label htmlFor="color2" className="clr2"></label>
 
-          <input type="radio" id="color3" name="color" value="purple" defaultChecked={timerColor === 'purple'} />
+          <input type="radio" id="color3" name="color" value="c3" defaultChecked={themeColor === 'c3'} />
           <label htmlFor="color3" className="clr3"></label>
         </div>
         <div className="settings__item settings__font">
           <h3>Font styles</h3>
-          <input type="radio" id="font1" name="font" value="serif" defaultChecked={fontStyle === 'sans-serif'} />
-          <label htmlFor="font1" className="font-preference__kumbh">Aa</label>
-          <input type="radio" id="font2" name="font" value="serif" defaultChecked={fontStyle === 'monospace'} />
-          <label htmlFor="font2" className="font-preference__roboto">Aa</label>
-          <input type="radio" id="font3" name="font" value="serif" defaultChecked={fontStyle === 'serif'} />
-          <label htmlFor="font3" className="font-preference__space">Aa</label>
+          <input type="radio" id="font1" name="font" value="f1" defaultChecked={fontStyle === 'f1'} />
+          <label htmlFor="font1" className="fnt1">Aa</label>
+          <input type="radio" id="font2" name="font" value="f2" defaultChecked={fontStyle === 'f2'} />
+          <label htmlFor="font2" className="fnt2">Aa</label>
+          <input type="radio" id="font3" name="font" value="f3" defaultChecked={fontStyle === 'f3'} />
+          <label htmlFor="font3" className="fnt3">Aa</label>
         </div>
         <input type="submit" value="Submit" />
       </form>
