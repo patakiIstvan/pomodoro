@@ -1,8 +1,8 @@
-.settingsSlidebar {
+.settings-slidebar {
   position: fixed;
   display: inline-block;
   background-color: gray;
-  width: 400px;
+  width: 300px;
   height: 100%;
   transition: all 0.3s ease-in-out;
   padding: 1rem;
@@ -11,12 +11,8 @@
     margin-bottom: 2rem;
   }
 
-  .settingsItem {
+  .settings__item {
     margin-bottom: 1rem;
-  }
-
-  label {
-    margin-right: 0.5rem;
   }
 
   input {
@@ -24,6 +20,7 @@
     width: 250px;
   }
 
+  // NUMBER INPUT
   /* Chrome, Safari, Edge, Opera */
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -36,6 +33,63 @@
     -moz-appearance: textfield;
   }
 
+  // NUMBER INPUT END
+  input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+
+  // input[type=radio] {
+  //   display: none;
+  // }
+
+  .settings__color,
+  .settings__font {
+    display: flex;
+    gap: 12px;
+  }
+
+  input[type="radio"]:checked+label {
+    border: 2px solid black;
+  }
+
+  .settings__color label,
+  .settings__font label {
+    cursor: pointer;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .settings__font label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .clr1 {
+    background-color: red;
+  }
+
+  .clr2 {
+    background-color: blue;
+  }
+
+  .clr3 {
+    background-color: #02FF00;
+  }
+
+  .settings__font label {
+    background-color: yellow;
+  }
+
+  input[type=submit] {}
+
+
+
+
 }
 
 .settings-shown {
@@ -43,5 +97,5 @@
 }
 
 .settings-not-shown {
-  right: -400px;
+  right: -300px;
 }

@@ -8,10 +8,11 @@ function App() {
 const [isSettingsShown, setIsSettingsShown] = useState(false);
 const [promodoTime, setPromodoTime] = useState(25);
 const [breakTime, setBreakTime] = useState(5);
+const [timerColor, setTimerColor] = useState("red");
+const [fontStyle, setFontStyle] = useState('serif')
 
 function toggleSettingsShown(){
   setIsSettingsShown(!isSettingsShown)
-  console.log("vis: "+String(isSettingsShown))
 }
 
   return (
@@ -22,7 +23,13 @@ function toggleSettingsShown(){
      <SettingsSlidebar 
      vis={isSettingsShown} 
      promodoTime={promodoTime}
+     setPromodoTime={setPromodoTime}
      breakTime={breakTime}
+     setBreakTime={setBreakTime}
+     timerColor={timerColor}
+     setTimerColor={setTimerColor}
+     fonstStyle={fontStyle}
+     setFontStyle={setFontStyle}
      />
      <Timer/>
     </div>
