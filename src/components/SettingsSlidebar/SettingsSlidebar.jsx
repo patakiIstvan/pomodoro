@@ -1,5 +1,5 @@
 import React from 'react'
-
+import RadioButton from '../RadioButton/RadioButton'
 
 
 function SettingsSlidebar({
@@ -13,7 +13,7 @@ function SettingsSlidebar({
   fontStyle,
   setFontStyle
 }) {
-
+  console.log(fontStyle)
   const fonts = {
     f1: `'Gloria Hallelujah', cursive`,
     f2: `'Inconsolata', monospace`,
@@ -37,7 +37,31 @@ function SettingsSlidebar({
     setFontStyle(e.target.font.value)
     document.documentElement.style.setProperty("--themeColor", colors[e.target.color.value]);
     document.documentElement.style.setProperty("--fontStyle", fonts[e.target.font.value]);
-    console.log(fontStyle)
+  }
+
+  const radiobuttons4fonts = []
+  for (let i = 1; i <= 6; i++) {
+    radiobuttons4fonts.push(
+      <RadioButton
+        key={'f' + i}
+        selector={'f' + i}
+        type="font"
+        stlye={fontStyle}
+        bgColor={'white'}
+        textFont={fonts['f' + i]} />
+    );
+  }
+  const radiobuttons4colors = []
+  for (let i = 1; i <= 3; i++) {
+    radiobuttons4colors.push(
+      <RadioButton
+        key={'c' + i}
+        selector={'c' + i}
+        type="color"
+        stlye={themeColor}
+        bgColor={colors['c' + i]}
+        textFont='sans-serif' />
+    )
   }
 
   return (
@@ -52,31 +76,13 @@ function SettingsSlidebar({
           <label htmlFor='promodo-break'>break</label>
           <input type="number" min="1" max="30" defaultValue={breakTime} name="promodoBreak" id="promodo-break" />
         </div>
-        <div className="settings__item settings__color">
-          <h3>Colors</h3>
-          <input type="radio" id="color1" name="color" value="c1" defaultChecked={themeColor === 'c1'} />
-          <label htmlFor="color1" className="clr1"></label>
-
-          <input type="radio" id="color2" name="color" value="c2" defaultChecked={themeColor === 'c2'} />
-          <label htmlFor="color2" className="clr2"></label>
-
-          <input type="radio" id="color3" name="color" value="c3" defaultChecked={themeColor === 'c3'} />
-          <label htmlFor="color3" className="clr3"></label>
+        <h3>Colors</h3>
+        <div className="settings__radio">
+          {radiobuttons4colors}
         </div>
-        <div className="settings__item settings__font">
-          <h3>Font styles</h3>
-          <input type="radio" id="font1" name="font" value="f1" defaultChecked={fontStyle === 'f1'} />
-          <label htmlFor="font1" className="fnt1">Aa</label>
-          <input type="radio" id="font2" name="font" value="f2" defaultChecked={fontStyle === 'f2'} />
-          <label htmlFor="font2" className="fnt2">Aa</label>
-          <input type="radio" id="font3" name="font" value="f3" defaultChecked={fontStyle === 'f3'} />
-          <label htmlFor="font3" className="fnt3">Aa</label>
-          <input type="radio" id="font4" name="font" value="f4" defaultChecked={fontStyle === 'f4'} />
-          <label htmlFor="font4" className="fnt1">Aa</label>
-          <input type="radio" id="font5" name="font" value="f5" defaultChecked={fontStyle === 'f5'} />
-          <label htmlFor="font5" className="fnt2">Aa</label>
-          <input type="radio" id="font6" name="font" value="f6" defaultChecked={fontStyle === 'f6'} />
-          <label htmlFor="font6" className="fnt3">Aa</label>
+        <h3>Font styles</h3>
+        <div className="settings__radio">
+          {radiobuttons4fonts}
         </div>
         <input type="submit" value="Submit" />
       </form>

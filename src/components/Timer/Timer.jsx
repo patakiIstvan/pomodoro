@@ -14,14 +14,34 @@ function Timer() {
           text="21:00"
           strokeWidth="5"
           styles={buildStyles({
-            pathColor: `rgba(62, 152, 199, ${percentage / 100})`,
+            pathColor: '#d6d6d6',
             textColor: '#f88',
-            trailColor: '#d6d6d6',
-            backgroundColor: '#3e98c7'
+            trailColor: '#ccccccBB',
           })}
         />
       </div>
-      <span className="focus-question">Vmi random cím</span>
+      <span className="focus-question">Focus question</span>
+      <span className="control-button"><i className="button__icon fa fa-play"></i>Start</span>
+      <div className="mode__container">
+        {/* work */}
+        <div className="mode__item">
+          <span className="mode__length">0 min</span>
+          <i className="mode__icon uil uil-laptop"></i>
+          <span className="mode__name">Work</span>
+        </div>
+        {/* short break */}
+        <div className="mode__item">
+          <span className="mode__length">0 min</span>
+          <i className="mode__icon uil uil-coffee"></i>
+          <span className="mode__name">Short break</span>
+        </div>
+        {/* long break */}
+        <div className="mode__item">
+          <span className="mode__length">0 min</span>
+          <i class="mode__icon uil uil-bed"></i>
+          <span className="mode__name">Long rest</span>
+        </div>
+      </div>
     </div>
   )
 }

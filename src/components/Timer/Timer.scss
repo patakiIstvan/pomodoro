@@ -1,16 +1,74 @@
 .Timer {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
+  width: 400px;
+  margin: auto;
 
   .timer__container {
-    width: 200px;
-    height: 200px;
+    width: 230px;
   }
 
   .focus-question {
+    color: #d6d6d6;
+    margin-top: 2rem;
+    font-size: 24px;
     font-family: var(--fontStyle);
+    margin-bottom: 2rem;
+  }
+
+  .control-button {
+    margin-bottom: 2rem;
+    color: #d6d6d6;
+    cursor: pointer;
+    font-size: 24px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+
+    }
+  }
+
+  .button__icon {
+    color: #d6d6d6;
+    margin-right: 0.5rem;
+  }
+
+  .mode__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mode__item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+
+    span {
+      color: #d0d0d0BB;
+      cursor: pointer;
+    }
+
+    .mode__icon {
+      font-size: 22px;
+      color: #d0d0d0BB;
+      cursor: pointer;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:hover .mode__icon,
+    &:hover span {
+      color: white;
+      transition: color 0.5s ease-in-out;
+    }
   }
 }

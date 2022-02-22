@@ -1,0 +1,23 @@
+.RadioButton {
+  flex: 1;
+
+  label {
+    cursor: pointer;
+    display: inline-block;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+
+  input[type="radio"]:checked+label {
+    border: 2px solid black;
+  }
+}

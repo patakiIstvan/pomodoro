@@ -11,11 +11,18 @@ const [breakTime, setBreakTime] = useState(5);
 const [themeColor, setThemeColor] = useState('c1');
 const [fontStyle, setFontStyle] = useState('f6')
 const [secLeft, setSecLeft] = useState(60*promodoTime)
-const [countingDown, isCountingDown] = useState(false)
+const [isCountingDown, setIsCountingDown] = useState(false)
+const [focusQuestion, setFocusQuestion] = useState('Focus question');
 
 function toggleSettingsShown(){
   setIsSettingsShown(!isSettingsShown)
 }
+
+function toggleCountdown(){
+  setIsCountingDown(!isCountingDown)
+  console.log(isCountingDown)
+}
+
 
 // Changes the remaining seconds into 00:00 format. Its something you could see on a microwave.
 const TimeDecor = (sec) => { 
