@@ -1,8 +1,9 @@
 import React from 'react'
 
-function SettingsButton({ toggleSettings }) {
+function SettingsButton({ toggleSettings, vis }) {
   return (
-    <div className="settingsButton" onClick={toggleSettings}>Menü</div>
+    <i onClick={toggleSettings}
+      className={`uil uil-bars settings-button ${vis && 'settings-shown'}`}></i>
   )
 }
 

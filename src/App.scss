@@ -8,3 +8,7 @@
   background-color: var(--themeColor);
   transition: background-color 0.3s ease-in-out;
 }
+
+.settings-shown {
+  transform: translateX(-300px);
+}

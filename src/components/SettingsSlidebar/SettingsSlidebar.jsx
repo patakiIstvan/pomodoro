@@ -34,14 +34,14 @@ function SettingsSlidebar({
     setPromodoTime(e.target.promodo.value)
     setBreakTime(e.target.promodoBreak.value)
     setThemeColor(e.target.color.value)
-    setFontStyle(e.target.style.value)
-    console.log(themeColor)
+    setFontStyle(e.target.font.value)
     document.documentElement.style.setProperty("--themeColor", colors[e.target.color.value]);
-    document.documentElement.style.setProperty("--fontStyle", fonts[e.target.style.value]);
+    document.documentElement.style.setProperty("--fontStyle", fonts[e.target.font.value]);
+    console.log(fontStyle)
   }
 
   return (
-    <div className={`settings-slidebar ${vis ? 'settings-shown' : 'settings-not-shown'}`} >
+    <div className={`settings-slidebar ${vis && 'settings-shown'}`} >
       <h2>Settings</h2>
       <form onSubmit={saveSettings}>
         <div className="settings__item">
@@ -71,6 +71,12 @@ function SettingsSlidebar({
           <label htmlFor="font2" className="fnt2">Aa</label>
           <input type="radio" id="font3" name="font" value="f3" defaultChecked={fontStyle === 'f3'} />
           <label htmlFor="font3" className="fnt3">Aa</label>
+          <input type="radio" id="font4" name="font" value="f4" defaultChecked={fontStyle === 'f4'} />
+          <label htmlFor="font4" className="fnt1">Aa</label>
+          <input type="radio" id="font5" name="font" value="f5" defaultChecked={fontStyle === 'f5'} />
+          <label htmlFor="font5" className="fnt2">Aa</label>
+          <input type="radio" id="font6" name="font" value="f6" defaultChecked={fontStyle === 'f6'} />
+          <label htmlFor="font6" className="fnt3">Aa</label>
         </div>
         <input type="submit" value="Submit" />
       </form>

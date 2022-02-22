@@ -6,6 +6,7 @@
   height: 100%;
   transition: all 0.3s ease-in-out;
   padding: 1rem;
+  right: -300px;
 
   h2 {
     margin-bottom: 2rem;
@@ -93,15 +94,4 @@
     border: none;
   }
 
-
-
-
-}
-
-.settings-shown {
-  right: 0px;
-}
-
-.settings-not-shown {
-  right: -300px;
 }

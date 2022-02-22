@@ -1,5 +1,9 @@
-.settingsButton {
+.settings-button {
   position: absolute;
-  color: red;
+  color: white;
+  font-size: 35px;
   cursor: pointer;
+  right: 30px;
+  top: 20px;
+  transition: transform 0.3s ease-in-out;
 }

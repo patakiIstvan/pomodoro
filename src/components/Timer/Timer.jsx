@@ -1,5 +1,5 @@
 import React from 'react'
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 function Timer() {
@@ -13,9 +13,15 @@ function Timer() {
           value={percentage}
           text="21:00"
           strokeWidth="5"
+          styles={buildStyles({
+            pathColor: `rgba(62, 152, 199, ${percentage / 100})`,
+            textColor: '#f88',
+            trailColor: '#d6d6d6',
+            backgroundColor: '#3e98c7'
+          })}
         />
       </div>
-      <h2>Vmi random cím</h2>
+      <span className="focus-question">Vmi random cím</span>
     </div>
   )
 }

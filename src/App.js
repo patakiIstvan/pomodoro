@@ -9,7 +9,7 @@ const [isSettingsShown, setIsSettingsShown] = useState(false);
 const [promodoTime, setPromodoTime] = useState(25);
 const [breakTime, setBreakTime] = useState(5);
 const [themeColor, setThemeColor] = useState('c1');
-const [fontStyle, setFontStyle] = useState('f1')
+const [fontStyle, setFontStyle] = useState('f6')
 const [secLeft, setSecLeft] = useState(60*promodoTime)
 const [countingDown, isCountingDown] = useState(false)
 
@@ -34,6 +34,7 @@ useEffect(() => {
     <div className="App">
      <SettingsButton
      toggleSettings={toggleSettingsShown}
+     vis={isSettingsShown}
      />
      <SettingsSlidebar 
      vis={isSettingsShown} 
