@@ -1,9 +1,6 @@
 import React from 'react'
 
 function RadioButton({ selector, type, style, bgColor, textFont }) {
-  // const current = (type === "color") ? bgColor : textFont;
-  // console.log(style)
-  // console.log(selector)
 
   return (
     <div className='RadioButton'>

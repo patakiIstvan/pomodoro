@@ -16,10 +16,11 @@ function SettingsSlidebar({
   setFontStyle,
   focusQuestion,
   setFocusQuestion,
-  toggleSettingsShown
+  toggleSettingsShown,
+  setSecLeft,
+  getMaxTime
 }) {
 
-  console.log(fontStyle)
   const fonts = {
     f1: `'Gloria Hallelujah', cursive`,
     f2: `'Inconsolata', monospace`,
@@ -37,11 +38,13 @@ function SettingsSlidebar({
 
   const saveSettings = e => {
     e.preventDefault();
-    setPromodoTime(e.target.promodo.value)
-    setShortBreakTime(e.target.promodoShortBreak.value)
+    setPromodoTime(Number(e.target.promodo.value))
+    setShortBreakTime(Number(e.target.promodoShortBreak.value))
+    setLongBreakTime(Number(e.target.promodoLongBreak.value))
     setThemeColor(e.target.color.value)
     setFontStyle(e.target.font.value)
     setFocusQuestion(e.target.focusquestion.value)
+    setSecLeft(getMaxTime)
     document.documentElement.style.setProperty("--themeColor", colors[e.target.color.value]);
     document.documentElement.style.setProperty("--fontStyle", fonts[e.target.font.value]);
     toggleSettingsShown()
@@ -54,7 +57,7 @@ function SettingsSlidebar({
         key={'f' + i}
         selector={'f' + i}
         type="font"
-        stlye={fontStyle}
+        style={String(fontStyle)}
         bgColor={'white'}
         textFont={fonts['f' + i]} />
     );
@@ -66,7 +69,7 @@ function SettingsSlidebar({
         key={'c' + i}
         selector={'c' + i}
         type="color"
-        stlye={themeColor}
+        style={themeColor}
         bgColor={colors['c' + i]}
         textFont='sans-serif' />
     )
