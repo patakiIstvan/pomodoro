@@ -28,7 +28,7 @@ function toggleSettingsShown(){
 }
 
 function toggleCountdown(){
-  if (focusQuestion != 'Set a focus questuon in the settings before you start'){
+  if (focusQuestion !== 'Set a focus questuon in the settings before you start'){
   setIsCountingDown(!isCountingDown)
   } else {
     toggleSettingsShown()
@@ -51,6 +51,8 @@ function getMaxTime(){
     case "short":
       return shortBreakTime;
     case "long":
+      return longBreakTime;
+     default:
       return longBreakTime;
   }
 }
