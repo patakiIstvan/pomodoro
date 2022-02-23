@@ -14,7 +14,7 @@ const [shortBreakTime, setShortBreakTime] = useState(5);
 const [longBreakTime, setLongBreakTime] = useState(20);
 const [themeColor, setThemeColor] = useState('c1');
 const [fontStyle, setFontStyle] = useState('f6')
-const [secLeft, setSecLeft] = useState(promodoTime)
+const [secLeft, setSecLeft] = useState(promodoTime*60)
 const [isCountingDown, setIsCountingDown] = useState(false)
 const [focusQuestion, setFocusQuestion] = useState('Set a focus questuon in the settings before you start');
 const [timerType, setTimerType] = useState('work');
@@ -47,11 +47,11 @@ const TimeDecor = (sec) => {
 function getMaxTime(){
   switch(timerType){
     case "work":
-      return promodoTime;
+      return promodoTime*60;
     case "short":
-      return shortBreakTime;
+      return shortBreakTime*60;
     case "long":
-      return longBreakTime;
+      return longBreakTime*60;
      default:
       return longBreakTime;
   }

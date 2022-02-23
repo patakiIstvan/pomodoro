@@ -44,7 +44,7 @@ function Timer({
         <div className={`mode__item ${timerType === "work" && 'chosen-timemode-scale'}`}
           onClick={() => {
             setIsCountingDown(false);
-            setSecLeft(promodoTime)
+            setSecLeft(promodoTime * 60)
             setTimerType('work')
           }}>
           <span className="mode__length">{`${promodoTime} min`}</span>
@@ -55,7 +55,7 @@ function Timer({
         <div className={`mode__item ${timerType === "short" && 'chosen-timemode-scale'}`}
           onClick={() => {
             setIsCountingDown(false);
-            setSecLeft(shortBreakTime)
+            setSecLeft(shortBreakTime * 60)
             setTimerType('short')
           }}>
           <span className="mode__length">{`${shortBreakTime} min`}</span>
@@ -66,7 +66,7 @@ function Timer({
         <div className={`mode__item ${timerType === "long" && 'chosen-timemode-scale'}`}
           onClick={() => {
             setIsCountingDown(false);
-            setSecLeft(longBreakTime)
+            setSecLeft(longBreakTime * 60)
             setTimerType('long')
           }}>
           <span className="mode__length">{`${longBreakTime} min`}</span>
