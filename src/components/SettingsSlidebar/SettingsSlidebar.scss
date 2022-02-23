@@ -1,19 +1,69 @@
 .settings-slidebar {
   position: fixed;
   display: inline-block;
-  background-color: gray;
+  background-color: #d6d6d6;
   width: 300px;
   height: 100%;
   transition: all 0.3s ease-in-out;
   padding: 1rem;
   right: -300px;
+  z-index: 100;
 
   h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .qtitle,
+  h3 {
+    font-weight: 700;
+    display: block;
+    font-size: 18px;
+    border-bottom: 1px solid #777777;
+    margin-bottom: 0.3rem;
+  }
+
+  h3 {
+    margin-bottom: 0.6rem;
+  }
+
+  textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 7px;
+    text-align: justify;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  .settings__times {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 
   .settings__item {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .mode__icon {
+      margin-right: 0.2rem;
+      font-size: 18px;
+    }
+
+    .btn {
+      width: 14px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    input {
+      width: 28px;
+      height: 22px;
+      text-align: center;
+    }
   }
 
   // input {
@@ -38,17 +88,21 @@
 
 
   .settings__radio {
-    display: flex;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 0.6rem;
   }
-
 
   input[type=submit] {
     cursor: pointer;
     width: 100%;
-    padding: 1rem 1rem;
-    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
     border: none;
+    border: 1px solid black;
+    font-weight: 700;
+    font-size: 16px;
   }
 
 }

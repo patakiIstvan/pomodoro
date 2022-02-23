@@ -14,9 +14,17 @@
   .focus-question {
     color: #d6d6d6;
     margin-top: 2rem;
-    font-size: 24px;
+    font-size: 22px;
     font-family: var(--fontStyle);
     margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .focus-question-warning {
+    color: #7d1710;
+    transform: scale(1.1);
   }
 
   .control-button {
@@ -25,6 +33,12 @@
     cursor: pointer;
     font-size: 24px;
     transition: all 0.3s ease-in-out;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 
     &:hover {
       transform: scale(1.1);
@@ -50,15 +64,23 @@
     flex-direction: column;
     transition: all 0.3s ease-in-out;
 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
     span {
       color: #d0d0d0BB;
       cursor: pointer;
+      transition: color 0.3s ease-in-out;
     }
 
     .mode__icon {
       font-size: 22px;
       color: #d0d0d0BB;
       cursor: pointer;
+      transition: color 0.3s ease-in-out;
     }
 
     &:hover {
@@ -67,8 +89,18 @@
 
     &:hover .mode__icon,
     &:hover span {
-      color: white;
-      transition: color 0.5s ease-in-out;
+      color: #d6d6d6;
+
     }
+  }
+
+  .chosen-timemode-scale {
+    transform: scale(1.1);
+
+    span,
+    .mode__icon {
+      color: #d6d6d6;
+    }
+
   }
 }
