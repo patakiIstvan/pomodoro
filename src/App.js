@@ -70,7 +70,7 @@ useEffect(() => {
   
     if(secLeft <= 0) {
       clearInterval(interval)
-      toggleCountdown()
+      setIsCountingDown(false)
       // setButtonText('')
       timesUp()
     }
@@ -78,7 +78,7 @@ useEffect(() => {
     return () => clearInterval(interval)
   }
   
-}, [isCountingDown, secLeft]);
+}, [isCountingDown, secLeft, timesUp]);
 
   return (
     <div className="App">
@@ -96,11 +96,13 @@ useEffect(() => {
      setShortBreakTime={setShortBreakTime}
      themeColor={themeColor}
      setThemeColor={setThemeColor}
-     fonstStyle={fontStyle}
+     fontStyle={fontStyle}
      setFontStyle={setFontStyle}
      focusQuestion={focusQuestion}
      setFocusQuestion={setFocusQuestion}
      toggleSettingsShown={toggleSettingsShown}
+     setSecLeft={setSecLeft}
+     getMaxTime={getMaxTime}
      />
      <Timer
      percentage = {getPercentage(secLeft)}
